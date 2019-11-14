@@ -57,13 +57,16 @@ func movement_loop():
 			$Sprite.flip_h = true
 		
 
-func _on_NPCdetection_body_entered(body):
-	if body.is_in_group("NPC"):
-		currentNPC = body.get_index()
-		canAsk = true
 
 
 func _on_NPCdetection_body_exited(body):
 	if body.is_in_group("NPC"):
 		currentNPC = null
 		canAsk = false
+
+
+func _on_NPCdetection_body_entered(body):
+	if body.is_in_group("NPC"):
+		print("pie")
+		currentNPC = body.get_index()
+		canAsk = true
