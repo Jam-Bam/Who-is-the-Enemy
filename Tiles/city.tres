@@ -3,7 +3,7 @@
 [ext_resource path="res://Tiles/City Tiles.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+points = PoolVector2Array( 0, 0, 16, 0, 16, 4.79336, 0.0779419, 4.98716 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0.141991, 4.18714, 15.808, 4.18714, 15.808, 15.977, 0, 16 )
