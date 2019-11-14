@@ -1,29 +1,29 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Character Sprites/MC-FrontAni0.png.png" type="Texture" id=2]
 [ext_resource path="res://Player/Main Character Sprites/MC-FrontAni1.png.png" type="Texture" id=3]
 [ext_resource path="res://Player/Main Character Sprites/MC-IdleBack.png.png" type="Texture" id=4]
-[ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=5]
-[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni0.png.png" type="Texture" id=6]
-[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni1.png.png" type="Texture" id=7]
-[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni2.png.png" type="Texture" id=8]
-[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni3.png.png" type="Texture" id=9]
-[ext_resource path="res://Player/Main Character Sprites/MC-BackAni0.png.png" type="Texture" id=10]
-[ext_resource path="res://Player/Main Character Sprites/MC-BackAni1.png.png" type="Texture" id=11]
+[ext_resource path="res://Player/Main Character Sprites/MC-BackAni0.png.png" type="Texture" id=5]
+[ext_resource path="res://Player/Main Character Sprites/MC-BackAni1.png.png" type="Texture" id=6]
+[ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=7]
+[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni0.png.png" type="Texture" id=8]
+[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni1.png.png" type="Texture" id=9]
+[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni2.png.png" type="Texture" id=10]
+[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni3.png.png" type="Texture" id=11]
 [ext_resource path="res://Player/Population.gd" type="Script" id=12]
 [ext_resource path="res://Player/Honor.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "idled",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walkd",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idled",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -31,24 +31,27 @@ animations = [ {
 "name": "idleu",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walku",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "idles",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walks",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "walku",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5, 7 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 14.9253, 12.3077 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "PLAYER",
@@ -61,6 +64,7 @@ animation = "idled"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 8, 8 )
 shape = SubResource( 2 )
 
@@ -88,5 +92,13 @@ margin_bottom = -49.9083
 custom_colors/font_color = Color( 0.0705882, 0.737255, 0.913725, 1 )
 text = "Honor: 1000"
 script = ExtResource( 13 )
-[connection signal="ready" from="Camera2D/Population" to="Camera2D/Population" method="_on_Label_ready"]
-[connection signal="ready" from="Camera2D/Honor" to="Camera2D/Honor" method="_on_Label_ready"]
+
+[node name="NPCdetection" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCdetection"]
+visible = false
+position = Vector2( 7.95237, 8.9719 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="NPCdetection" to="." method="_on_NPCdetection_body_entered"]
+[connection signal="body_exited" from="NPCdetection" to="." method="_on_NPCdetection_body_exited"]
