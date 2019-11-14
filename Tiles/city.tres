@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=2]
+[gd_resource type="TileSet" load_steps=6 format=2]
 
 [ext_resource path="res://Tiles/City Tiles.png" type="Texture" id=1]
 
@@ -6,10 +6,13 @@
 points = PoolVector2Array( 0, 0, 16, 0, 16, 4.79336, 0.0779419, 4.98716 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0.141991, 4.18714, 15.808, 4.18714, 15.808, 15.977, 0, 16 )
+points = PoolVector2Array( 16, 0, 16, 16, 5.01231, 16, 5.19924, 0.0697632 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 5.95275, 0, 5.95275 )
+points = PoolVector2Array( 0, 3.99525, 16, 4.08871, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 4.35142, 0, 4.35142 )
 
 [resource]
 0/name = "SW"
@@ -80,7 +83,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 5.95275, 0, 5.95275 )
 4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 48, 96, 16, 32 )
+4/region = Rect2( 32, 96, 32, 32 )
 4/tile_mode = 2
 4/autotile/icon_coordinate = Vector2( 0, 0 )
 4/autotile/tile_size = Vector2( 16, 16 )
@@ -97,10 +100,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 5.95275, 0, 5.95275 )
 "shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
-"autotile_coord": Vector2( 0, 1 ),
+"autotile_coord": Vector2( 1, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
