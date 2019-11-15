@@ -71,3 +71,10 @@ func _on_Text_End_timeout():
 	$UI/RadioText.text = ""
 	$Player.get_tree().paused = false
 	talking = true
+
+
+func _on_InternalClock_timeout():
+	if population == 40:
+		get_tree().change_scene("res://WonGame.tscn")
+	else:
+		pass
