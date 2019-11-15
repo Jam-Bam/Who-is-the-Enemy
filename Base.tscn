@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Base.gd" type="Script" id=1]
 [ext_resource path="res://Music/The Adventure Begins 8-bit remix.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Tiles/city.tres" type="TileSet" id=3]
-[ext_resource path="res://NPCs/NPC.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Tiles/Building1.png.png" type="Texture" id=4]
+[ext_resource path="res://Tiles/TownHall.png.png" type="Texture" id=5]
+[ext_resource path="res://Tiles/HotdogBuilding1.png.png" type="Texture" id=6]
+[ext_resource path="res://Tiles/HotdogBuilding2.png.png" type="Texture" id=7]
+[ext_resource path="res://NPCs/NPC.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -25,53 +29,63 @@ tile_data = PoolIntArray( -458763, 4, 0, -458762, 4, 1, -458761, 4, 1, -458760, 
 [node name="Building1png3" type="Sprite" parent="."]
 position = Vector2( 287.889, 115.243 )
 scale = Vector2( 1.00562, 0.87292 )
+texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 102, 64, 30 )
 
 [node name="Building1png2" type="Sprite" parent="."]
 position = Vector2( 287.946, -40.1407 )
 scale = Vector2( 1.00443, 0.878776 )
+texture = ExtResource( 4 )
 
 [node name="TownHallpng2" type="Sprite" parent="."]
 position = Vector2( -103.891, 33.5289 )
 scale = Vector2( 1.27157, 1 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 100, 64, 30 )
 
 [node name="HotdogBuilding1png2" type="Sprite" parent="."]
 position = Vector2( 455.912, -115.098 )
 scale = Vector2( 0.836779, 1.4754 )
+texture = ExtResource( 6 )
 
 [node name="HotdogBuilding1png" type="Sprite" parent="."]
 position = Vector2( 359.994, -115.157 )
 scale = Vector2( 0.835853, 1.471 )
+texture = ExtResource( 6 )
 
 [node name="HotdogBuilding2png" type="Sprite" parent="."]
 position = Vector2( 216.012, -104 )
 scale = Vector2( 0.833522, 1.00483 )
+texture = ExtResource( 7 )
 
 [node name="HotdogBuilding3png" type="Sprite" parent="."]
 position = Vector2( 119.883, -104.042 )
 scale = Vector2( 0.836058, 1.00483 )
+texture = ExtResource( 7 )
 
-[node name="NPC" parent="." instance=ExtResource( 4 )]
+[node name="NPC" parent="." instance=ExtResource( 8 )]
 position = Vector2( 328, 64 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 328, 80 )
 
 [node name="Building1png" type="Sprite" parent="."]
 position = Vector2( 287.841, 59.3868 )
 scale = Vector2( 1.00634, 0.858897 )
+texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 100 )
 
 [node name="TownHallpng" type="Sprite" parent="."]
 position = Vector2( -103.687, -28.9062 )
 scale = Vector2( 1.26441, 1 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 100 )
 
 [node name="HotdogBuilding2png2" type="Sprite" parent="."]
 position = Vector2( 23.603, -104.178 )
 scale = Vector2( 0.842489, 1.02083 )
+texture = ExtResource( 7 )
