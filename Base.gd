@@ -3,6 +3,8 @@ var beginning_text = "......... Schiz! It's me! Listen!!! There out to get you!!
 var text_array = ["Whoops, I was wrong, they're wearing a blue shirt!","Oh no! I forgot to mention they have green hair","Oh wait! Find the man with the glasses now!"]
 var NPC_Resource = load("res://NPCs/NPC.tscn")
 onready var player = $MusicPlayer
+onready var siren = $Siren
+onready var timer = $Timer
 onready var pop_label = $UI/popLabel
 onready var hon_label = $UI/honLabel
 onready var top_left = $Points/TopLeft
@@ -35,3 +37,11 @@ func _ready():
 func _process(delta):
 	pop_label.text = "Population: " + String(population)
 	hon_label.text = "Points: " + String(honor_points)
+	if population == 36:
+		if siren.playing != true:
+			siren.play()
+			player.stop()
+			timer.start()
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Court.tscn")
