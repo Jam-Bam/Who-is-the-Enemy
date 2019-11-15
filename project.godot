@@ -15,8 +15,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="RPG"
+config/name="Who is the Enemy?"
 run/main_scene="res://Base.tscn"
+config/icon="res://misc/Icon.png"
 
 [autoload]
 
