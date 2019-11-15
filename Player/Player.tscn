@@ -1,23 +1,12 @@
 [gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-<<<<<<< HEAD
-[ext_resource path="res://Player/Main Character Sprites/MC-BackAni0.png.png" type="Texture" id=2]
-[ext_resource path="res://Player/Main Character Sprites/MC-BackAni1.png.png" type="Texture" id=3]
-=======
 [ext_resource path="res://Player/Main Character Sprites/MC-StabUp.png.png" type="Texture" id=2]
 [ext_resource path="res://Player/Main Character Sprites/MC-StabDown.png.png" type="Texture" id=3]
->>>>>>> 85f0c69dfa60336379cdb47aff29057dfea712b1
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni0.png.png" type="Texture" id=4]
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni1.png.png" type="Texture" id=5]
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni2.png.png" type="Texture" id=6]
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni3.png.png" type="Texture" id=7]
-<<<<<<< HEAD
-[ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=8]
-[ext_resource path="res://Player/Main Character Sprites/MC-IdleBack.png.png" type="Texture" id=9]
-[ext_resource path="res://Player/Main Character Sprites/MC-FrontAni0.png.png" type="Texture" id=10]
-[ext_resource path="res://Player/Main Character Sprites/MC-FrontAni1.png.png" type="Texture" id=11]
-=======
 [ext_resource path="res://Player/Main Character Sprites/MC-FrontAni0.png.png" type="Texture" id=8]
 [ext_resource path="res://Player/Main Character Sprites/MC-FrontAni1.png.png" type="Texture" id=9]
 [ext_resource path="res://Player/Main Character Sprites/MC-BackAni0.png.png" type="Texture" id=10]
@@ -26,32 +15,16 @@
 [ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=13]
 [ext_resource path="res://Player/Main Character Sprites/MC-StabLeft.png.png" type="Texture" id=14]
 [ext_resource path="res://Player/Main Character Sprites/MC-IdleFront.png.png" type="Texture" id=15]
->>>>>>> 85f0c69dfa60336379cdb47aff29057dfea712b1
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-<<<<<<< HEAD
-"name": "walku",
-=======
 "name": "stabu",
->>>>>>> 85f0c69dfa60336379cdb47aff29057dfea712b1
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-<<<<<<< HEAD
-"name": "walks",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "idles",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-=======
 "name": "stabd",
 "speed": 5.0
 }, {
@@ -61,27 +34,17 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
->>>>>>> 85f0c69dfa60336379cdb47aff29057dfea712b1
 "loop": true,
-"name": "idleu",
+"name": "walkd",
 "speed": 5.0
 }, {
-<<<<<<< HEAD
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "idled",
-=======
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walku",
->>>>>>> 85f0c69dfa60336379cdb47aff29057dfea712b1
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
-<<<<<<< HEAD
-"name": "walkd",
-=======
 "name": "idleu",
 "speed": 5.0
 }, {
@@ -98,7 +61,6 @@ animations = [ {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "idled",
->>>>>>> 85f0c69dfa60336379cdb47aff29057dfea712b1
 "speed": 5.0
 } ]
 
