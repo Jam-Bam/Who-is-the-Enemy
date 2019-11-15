@@ -113,15 +113,15 @@ region_rect = Rect2( 0, 100, 64, 30 )
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 546.13, -73.6317 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="popLabel" type="Label" parent="CanvasLayer"]
+[node name="popLabel" type="Label" parent="UI"]
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 1 )
 text = "Population"
 
-[node name="honLabel" type="Label" parent="CanvasLayer"]
+[node name="honLabel" type="Label" parent="UI"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -80.0
