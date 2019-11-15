@@ -15,9 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Schiz"
+config/name="RPG"
 run/main_scene="res://Base.tscn"
-boot_splash/fullsize=false
 
 [autoload]
 
@@ -28,10 +27,13 @@ dir="*res://CodeFolder/directions.gd"
 window/size/width=240
 window/size/height=135
 <<<<<<< HEAD
+<<<<<<< HEAD
 window/size/borderless=true
 window/size/fullscreen=true
 =======
 >>>>>>> parent of 6d6028f... Delete project.godot
+=======
+>>>>>>> parent of 9f5409b... Added
 window/size/test_width=960
 window/size/test_height=540
 window/dpi/allow_hidpi=true
@@ -93,14 +95,10 @@ ui_down={
 }
 ask={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
- ]
-}
-PopulationSubtract={
-"deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 stab={
@@ -116,6 +114,11 @@ HonorSubtract={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
 >>>>>>> parent of 6d6028f... Delete project.godot
+=======
+stab={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+>>>>>>> parent of 9f5409b... Added
  ]
 }
 

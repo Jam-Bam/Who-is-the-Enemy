@@ -2,7 +2,6 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-<<<<<<< HEAD
 [ext_resource path="res://Player/Main Character Sprites/MC-StabLeft.png.png" type="Texture" id=2]
 [ext_resource path="res://Player/Main Character Sprites/MC-StabRight.png.png" type="Texture" id=3]
 [ext_resource path="res://Player/Main Character Sprites/MC-StabDown.png.png" type="Texture" id=4]
@@ -19,6 +18,7 @@
 [ext_resource path="res://Player/Main Character Sprites/MC-IdleBack.png.png" type="Texture" id=15]
 [ext_resource path="res://Player/Population.gd" type="Script" id=16]
 [ext_resource path="res://Player/Honor.gd" type="Script" id=17]
+<<<<<<< HEAD
 =======
 =======
 [gd_scene load_steps=17 format=2]
@@ -39,6 +39,8 @@
 [ext_resource path="res://Player/Honor.gd" type="Script" id=13]
 <<<<<<< HEAD
 >>>>>>> 792c74e7dec6e3544b41ff06cbebb7b904cb3f1b
+=======
+>>>>>>> parent of 9f5409b... Added
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -47,11 +49,11 @@ animations = [ {
 "name": "stabl",
 "speed": 1.0
 }, {
-<<<<<<< HEAD
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "stabr",
 "speed": 1.0
+<<<<<<< HEAD
 =======
 =======
 
@@ -69,10 +71,11 @@ animations = [ {
 "speed": 5.0
 <<<<<<< HEAD
 >>>>>>> 792c74e7dec6e3544b41ff06cbebb7b904cb3f1b
+=======
+>>>>>>> parent of 9f5409b... Added
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-<<<<<<< HEAD
 "name": "stabd",
 "speed": 5.0
 }, {
@@ -87,6 +90,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
+<<<<<<< HEAD
 =======
 =======
 }, {
@@ -112,17 +116,20 @@ animations = [ {
 }, {
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+"loop": true,
+"name": "idles",
+"speed": 5.0
+}, {
+>>>>>>> parent of 9f5409b... Added
 "frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "walku",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
-=======
-"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
->>>>>>> 792c74e7dec6e3544b41ff06cbebb7b904cb3f1b
 "loop": true,
-"name": "walku",
+"name": "walks",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
