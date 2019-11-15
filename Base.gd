@@ -1,5 +1,6 @@
 extends Node
-
+var beginning_text = "......... Schiz! It's me! Listen!!! There out to get you!! You must kill them before they kill you! TRUST ME! Watch out, They have a white shirt!"
+var text_array = ["Whoops, I was wrong, they're wearing a blue shirt!","Oh no! I forgot to mention they have green hair","Oh wait! Find the man with the glasses now!"]
 var NPC_Resource = load("res://NPCs/NPC.tscn")
 onready var player = $MusicPlayer
 onready var pop_label = $UI/popLabel
