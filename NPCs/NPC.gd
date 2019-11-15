@@ -5,8 +5,8 @@ var movedir = Vector2(0,0)
 var movetimer_length = 100
 var movetimer = 0
 
-func _ready():
-	get_node("../Player").connect("follow",self,"follow_player")
+#func _ready():
+#	get_node("../Player").connect("follow",self,"follow_player")
 	
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
