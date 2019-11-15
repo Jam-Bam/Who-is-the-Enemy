@@ -6,11 +6,24 @@ var lastmotion
 var canAsk = false
 var currentNPC
 var motion
+var parent
+var guts_resource = preload("res://misc/guts.tscn")
+
+func _ready():
+	parent = get_parent()
 
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
 	if Input.is_action_just_pressed("stab"):
+		if currentNPC != null:
+			var deadNPC = parent.get_child(currentNPC)
+			var guts = guts_resource.instance()
+			guts.position = deadNPC.position - Vector2(0,-8)
+			parent.add_child(guts)
+			deadNPC.queue_free()
+			parent.population -= 1
+			parent.honor_points -= 10
 		match lastmotion:
 			"d":
 				$Sprite.play("stabd")
@@ -21,6 +34,7 @@ func _physics_process(delta):
 				$Sprite.flip_h
 			"u":
 				$Sprite.play("stabu")
+		
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
