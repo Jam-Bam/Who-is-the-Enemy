@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
@@ -19,6 +20,11 @@
 [ext_resource path="res://Player/Population.gd" type="Script" id=16]
 [ext_resource path="res://Player/Honor.gd" type="Script" id=17]
 =======
+=======
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+>>>>>>> parent of cc504c0... Delete Player.tscn
 [ext_resource path="res://Player/Main Character Sprites/MC-FrontAni0.png.png" type="Texture" id=2]
 [ext_resource path="res://Player/Main Character Sprites/MC-FrontAni1.png.png" type="Texture" id=3]
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni0.png.png" type="Texture" id=4]
@@ -31,6 +37,7 @@
 [ext_resource path="res://Player/Main Character Sprites/MC-BackAni1.png.png" type="Texture" id=11]
 [ext_resource path="res://Player/Population.gd" type="Script" id=12]
 [ext_resource path="res://Player/Honor.gd" type="Script" id=13]
+<<<<<<< HEAD
 >>>>>>> 792c74e7dec6e3544b41ff06cbebb7b904cb3f1b
 
 [sub_resource type="SpriteFrames" id=1]
@@ -46,10 +53,21 @@ animations = [ {
 "name": "stabr",
 "speed": 1.0
 =======
+=======
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walkd",
+"speed": 5.0
+}, {
+>>>>>>> parent of cc504c0... Delete Player.tscn
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "walks",
 "speed": 5.0
+<<<<<<< HEAD
 >>>>>>> 792c74e7dec6e3544b41ff06cbebb7b904cb3f1b
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -70,6 +88,11 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 8 ) ],
 =======
+=======
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+>>>>>>> parent of cc504c0... Delete Player.tscn
 "name": "idles",
 "speed": 5.0
 }, {
@@ -79,11 +102,15 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
+<<<<<<< HEAD
 >>>>>>> 792c74e7dec6e3544b41ff06cbebb7b904cb3f1b
+=======
+>>>>>>> parent of cc504c0... Delete Player.tscn
 "loop": true,
 "name": "idleu",
 "speed": 5.0
 }, {
+<<<<<<< HEAD
 <<<<<<< HEAD
 "frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
@@ -107,6 +134,12 @@ animations = [ {
 "loop": true,
 "name": "idleu",
 "speed": 5.0
+=======
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walku",
+"speed": 5.0
+>>>>>>> parent of cc504c0... Delete Player.tscn
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -144,7 +177,11 @@ margin_right = -75.9312
 margin_bottom = -49.8642
 custom_colors/font_color = Color( 0.913725, 0.0705882, 0.0705882, 1 )
 text = "Population: 100"
+<<<<<<< HEAD
 script = ExtResource( 16 )
+=======
+script = ExtResource( 12 )
+>>>>>>> parent of cc504c0... Delete Player.tscn
 
 [node name="Honor" type="Label" parent="Camera2D"]
 margin_left = 38.3729
@@ -153,7 +190,11 @@ margin_right = 117.373
 margin_bottom = -49.9083
 custom_colors/font_color = Color( 0.0705882, 0.737255, 0.913725, 1 )
 text = "Honor: 1000"
+<<<<<<< HEAD
 script = ExtResource( 17 )
+=======
+script = ExtResource( 13 )
+>>>>>>> parent of cc504c0... Delete Player.tscn
 
 [node name="NPCdetection" type="Area2D" parent="."]
 editor/display_folded = true
