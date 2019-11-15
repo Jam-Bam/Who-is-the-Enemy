@@ -1,18 +1,16 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Character Sprites/MC-FrontAni0.png.png" type="Texture" id=2]
-[ext_resource path="res://Player/Main Character Sprites/MC-IdleBack.png.png" type="Texture" id=3]
-[ext_resource path="res://Player/Main Character Sprites/MC-BackAni0.png.png" type="Texture" id=4]
-[ext_resource path="res://Player/Main Character Sprites/MC-BackAni1.png.png" type="Texture" id=5]
-[ext_resource path="res://Player/Main Character Sprites/MC-FrontAni1.png.png" type="Texture" id=6]
-[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni0.png.png" type="Texture" id=7]
-[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni1.png.png" type="Texture" id=8]
-[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni2.png.png" type="Texture" id=9]
-[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni3.png.png" type="Texture" id=10]
-[ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=11]
-[ext_resource path="res://Player/Population.gd" type="Script" id=12]
-[ext_resource path="res://Player/Honor.gd" type="Script" id=13]
+[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni0.png.png" type="Texture" id=3]
+[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni1.png.png" type="Texture" id=4]
+[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni2.png.png" type="Texture" id=5]
+[ext_resource path="res://Player/Main Character Sprites/MC-LeftAni3.png.png" type="Texture" id=6]
+[ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=7]
+[ext_resource path="res://Player/Main Character Sprites/MC-BackAni0.png.png" type="Texture" id=8]
+[ext_resource path="res://Player/Main Character Sprites/MC-BackAni1.png.png" type="Texture" id=9]
+[ext_resource path="res://Player/Main Character Sprites/MC-FrontAni1.png.png" type="Texture" id=10]
+[ext_resource path="res://Player/Main Character Sprites/MC-IdleBack.png.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -21,29 +19,29 @@ animations = [ {
 "name": "idled",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "idleu",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "walku",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "walkd",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "walks",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "idles",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walku",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walkd",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "idleu",
 "speed": 5.0
 } ]
 
@@ -74,24 +72,6 @@ z_index = 1
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
-
-[node name="Population" type="Label" parent="Camera2D"]
-margin_left = -116.931
-margin_top = -63.8642
-margin_right = -75.9312
-margin_bottom = -49.8642
-custom_colors/font_color = Color( 0.913725, 0.0705882, 0.0705882, 1 )
-text = "Population: 100"
-script = ExtResource( 12 )
-
-[node name="Honor" type="Label" parent="Camera2D"]
-margin_left = 38.3729
-margin_top = -63.9083
-margin_right = 117.373
-margin_bottom = -49.9083
-custom_colors/font_color = Color( 0.0705882, 0.737255, 0.913725, 1 )
-text = "Honor: 1000"
-script = ExtResource( 13 )
 
 [node name="NPCdetection" type="Area2D" parent="."]
 editor/display_folded = true
