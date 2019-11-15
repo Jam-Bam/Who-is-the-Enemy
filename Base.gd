@@ -7,4 +7,5 @@ func _ready():
 		var NPC = NPC_Resource.instance()
 		add_child(NPC)
 		NPC.position = Vector2(350,50)
+		#NPC (AnimatedSprite1).play(rand_range(1, 10))
 		
