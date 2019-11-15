@@ -15,8 +15,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="RPG"
+config/name="Schiz"
 run/main_scene="res://Base.tscn"
+boot_splash/fullsize=false
 
 [autoload]
 
