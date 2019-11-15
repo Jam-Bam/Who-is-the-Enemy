@@ -2,15 +2,17 @@ extends KinematicBody2D
 
 const SPEED = 40
 var movedir = Vector2(0,0)
-var movetimer_length = 100
+var movetimer_length = int(rand_range(100, 300))
 var movetimer = 0
-
-#func _ready():
-#	get_node("../Player").connect("follow",self,"follow_player")
+var anim = 0
+func _ready():
+	anim = int(rand_range(0,9))
 	
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	move_and_slide(motion, Vector2(0,0))
+	
+	$AnimatedSprite.play(String(anim))
 	
 func _physics_process(delta):
 	movement_loop()
@@ -19,6 +21,3 @@ func _physics_process(delta):
 	if movetimer == 0 || is_on_wall():
 		movedir = dir.rand()
 		movetimer = movetimer_length
-
-func follow_player():
-	print("CHEESE")

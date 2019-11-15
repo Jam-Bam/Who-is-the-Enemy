@@ -111,7 +111,7 @@ region_enabled = true
 region_rect = Rect2( 0, 100, 64, 30 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 328, 80 )
+position = Vector2( 546.13, -73.6317 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -128,3 +128,17 @@ margin_left = -80.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 1 )
 text = "Points:"
+
+[node name="Points" type="Node2D" parent="."]
+
+[node name="TopLeft" type="Node2D" parent="Points"]
+position = Vector2( 77.9663, -7.6403 )
+
+[node name="TopRight" type="Node2D" parent="Points"]
+position = Vector2( 555.839, 207.147 )
+
+[node name="BottomLeft" type="Node2D" parent="Points"]
+position = Vector2( 10.3546, 377.321 )
+
+[node name="BottomRight" type="Node2D" parent="Points"]
+position = Vector2( 517.039, 392.912 )
