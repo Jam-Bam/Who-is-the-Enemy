@@ -57,7 +57,6 @@ position = Vector2( 455.912, -115.098 )
 scale = Vector2( 0.836779, 1.4754 )
 texture = ExtResource( 6 )
 
-<<<<<<< HEAD
 [node name="Building1png3" type="Sprite" parent="Buildings"]
 position = Vector2( 287.889, 115.243 )
 scale = Vector2( 1.00562, 0.87292 )
@@ -65,14 +64,11 @@ texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 102, 64, 30 )
 
-=======
->>>>>>> d9e234991fb7cae97f670140f38a9a0a6cc6e951
 [node name="Building1png2" type="Sprite" parent="Buildings"]
 position = Vector2( 287.946, -40.1407 )
 scale = Vector2( 1.00443, 0.878776 )
 texture = ExtResource( 7 )
 
-<<<<<<< HEAD
 [node name="TownHallpng2" type="Sprite" parent="Buildings"]
 position = Vector2( -103.891, 33.5289 )
 scale = Vector2( 1.27157, 1 )
@@ -80,8 +76,6 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 100, 64, 30 )
 
-=======
->>>>>>> d9e234991fb7cae97f670140f38a9a0a6cc6e951
 [node name="Building1png" type="Sprite" parent="Buildings"]
 position = Vector2( 287.841, 59.3868 )
 scale = Vector2( 1.00634, 0.858897 )
@@ -93,24 +87,8 @@ region_rect = Rect2( 0, 0, 64, 100 )
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 328, 80 )
 
-<<<<<<< HEAD
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="popLabel" type="Label" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 14.0
-=======
-[node name="TownHallpng2" type="Sprite" parent="."]
-position = Vector2( -103.891, 33.5289 )
-scale = Vector2( 1.27157, 1 )
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 0, 100, 64, 30 )
-
-[node name="Building1png3" type="Sprite" parent="."]
-position = Vector2( 287.889, 115.243 )
-scale = Vector2( 1.00562, 0.87292 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 0, 102, 64, 30 )
->>>>>>> d9e234991fb7cae97f670140f38a9a0a6cc6e951
