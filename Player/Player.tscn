@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Character Sprites/MC-StabUp.png.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Player/Main Character Sprites/MC-IdleBack.png.png" type="Texture" id=12]
 [ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=13]
 [ext_resource path="res://Player/Main Character Sprites/MC-StabLeft.png.png" type="Texture" id=14]
+[ext_resource path="res://Player/Main Character Sprites/MC-IdleFront.png.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -25,11 +26,6 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "stabd",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "idled",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
@@ -60,6 +56,11 @@ animations = [ {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "stabs",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "idled",
 "speed": 5.0
 } ]
 
