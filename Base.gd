@@ -11,12 +11,9 @@ var population = 80
 var honor_points = 0
 
 func _ready():
-<<<<<<< HEAD
 	for i in range(20):
-=======
-	randomize()
+		randomize()
 	for i in range(10):
->>>>>>> 66d82cfe27787e719e15f9b574aaecaaad28f538
 		var NPC = NPC_Resource.instance()
 		add_child(NPC)
 		NPC.position = top_left.position
