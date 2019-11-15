@@ -1,28 +1,26 @@
 extends KinematicBody2D
 
-const SPEED = 70
+const SPEED = 85
 var movedir = Vector2(0,0)
 var lastmotion
 var canAsk = false
 var currentNPC
-signal follow
 var motion
 
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
-	#var follower = get_child(currentNPC)
-	if Input.is_action_just_pressed("ask") and canAsk:
-		pass
 	if Input.is_action_just_pressed("stab"):
-		if motion.x < 0:
-			$Sprite.play("stabl")
-		elif motion.x > 0:
-			$Sprite.play("stabr")
-		elif motion.y > 0:
-			$Sprite.play("stabd")
-		elif motion.y < 0:
-			$Sprite.play("stabu")
+		match lastmotion:
+			"d":
+				$Sprite.play("stabd")
+			"l":
+				$Sprite.play("stabs")
+			"r":
+				$Sprite.play("stabs")
+				$Sprite.flip_h
+			"u":
+				$Sprite.play("stabu")
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
