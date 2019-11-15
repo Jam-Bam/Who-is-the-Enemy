@@ -21,6 +21,7 @@ func _physics_process(delta):
 			var guts = guts_resource.instance()
 			guts.position = deadNPC.position - Vector2(0,-8)
 			parent.add_child(guts)
+			parent.player.pitch_scale += 0.01
 			deadNPC.queue_free()
 			parent.population -= 1
 			parent.honor_points -= 10
