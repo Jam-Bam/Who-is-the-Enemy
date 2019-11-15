@@ -7,7 +7,7 @@ const down = Vector2(0,1)
 const stand = Vector2(0,0)
 
 func rand():
-	var d = randi() % 4 + 1
+	var d = randi() % 5 + 1
 	match d:
 		1:
 			return left

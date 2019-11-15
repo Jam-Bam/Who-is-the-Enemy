@@ -6,14 +6,23 @@ var lastmotion
 var canAsk = false
 var currentNPC
 signal follow
+var motion
 
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
+	#var follower = get_child(currentNPC)
 	if Input.is_action_just_pressed("ask") and canAsk:
-		print(currentNPC)
-	
-
+		pass
+	if Input.is_action_just_pressed("stab"):
+		if motion.x < 0:
+			$Sprite.play("stabl")
+		elif motion.x > 0:
+			$Sprite.play("stabr")
+		elif motion.y > 0:
+			$Sprite.play("stabd")
+		elif motion.y < 0:
+			$Sprite.play("stabu")
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
@@ -25,7 +34,7 @@ func controls_loop():
 	movedir.y = -int(UP) + int(DOWN)
 
 func movement_loop():
-	var motion = movedir.normalized() * SPEED
+	motion = movedir.normalized() * SPEED
 	
 	move_and_slide(motion, Vector2(0,0))
 	if motion.x < 0:
@@ -55,18 +64,13 @@ func movement_loop():
 		elif lastmotion == "r":
 			$Sprite.play("idles")
 			$Sprite.flip_h = true
-		
 
-
+func _on_NPCdetection_body_entered(body):
+	if body.is_in_group("NPC"):
+		currentNPC = body.get_index()
+		canAsk = true
 
 func _on_NPCdetection_body_exited(body):
 	if body.is_in_group("NPC"):
 		currentNPC = null
 		canAsk = false
-
-
-func _on_NPCdetection_body_entered(body):
-	if body.is_in_group("NPC"):
-		print("pie")
-		currentNPC = body.get_index()
-		canAsk = true
