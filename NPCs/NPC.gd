@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
-const SPEED = 40
+var SPEED = rand_range(40,50)
 var movedir = Vector2(0,0)
 var movetimer_length = int(rand_range(100, 300))
 var movetimer = 0
 var anim = 0
 func _ready():
+	randomize()
 	anim = int(rand_range(0,19))
 	
 func movement_loop():
