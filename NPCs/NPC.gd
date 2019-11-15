@@ -6,7 +6,7 @@ var movetimer_length = int(rand_range(100, 300))
 var movetimer = 0
 var anim = 0
 func _ready():
-	anim = int(rand_range(0,9))
+	anim = int(rand_range(0,19))
 	
 func movement_loop():
 	var motion = movedir.normalized() * SPEED
