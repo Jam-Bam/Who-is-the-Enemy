@@ -2,15 +2,15 @@
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Character Sprites/MC-FrontAni0.png.png" type="Texture" id=2]
-[ext_resource path="res://Player/Main Character Sprites/MC-FrontAni1.png.png" type="Texture" id=3]
-[ext_resource path="res://Player/Main Character Sprites/MC-BackAni0.png.png" type="Texture" id=4]
-[ext_resource path="res://Player/Main Character Sprites/MC-BackAni1.png.png" type="Texture" id=5]
+[ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=3]
+[ext_resource path="res://Player/Main Character Sprites/MC-IdleBack.png.png" type="Texture" id=4]
+[ext_resource path="res://Player/Main Character Sprites/MC-FrontAni1.png.png" type="Texture" id=5]
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni0.png.png" type="Texture" id=6]
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni1.png.png" type="Texture" id=7]
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni2.png.png" type="Texture" id=8]
 [ext_resource path="res://Player/Main Character Sprites/MC-LeftAni3.png.png" type="Texture" id=9]
-[ext_resource path="res://Player/Main Character Sprites/MC-IdleLeft.png.png" type="Texture" id=10]
-[ext_resource path="res://Player/Main Character Sprites/MC-IdleBack.png.png" type="Texture" id=11]
+[ext_resource path="res://Player/Main Character Sprites/MC-BackAni0.png.png" type="Texture" id=10]
+[ext_resource path="res://Player/Main Character Sprites/MC-BackAni1.png.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -19,14 +19,19 @@ animations = [ {
 "name": "idled",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "walkd",
+"name": "idles",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "walku",
+"name": "idleu",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walkd",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
@@ -34,19 +39,14 @@ animations = [ {
 "name": "walks",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "idles",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "idleu",
+"name": "walku",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 5, 7 )
+extents = Vector2( 5, 7.55169 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 14.9253, 12.3077 )
@@ -62,8 +62,7 @@ animation = "idled"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 8, 8 )
+position = Vector2( 8, 8.48597 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
