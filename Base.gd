@@ -30,7 +30,7 @@ var endgame = false
 var x = true
 var newd = null
 var used = false
-
+var ahhhh = false
 
 func _ready():
 	$Player.get_tree().paused = true
@@ -100,13 +100,17 @@ func _process(delta):
 	if $UI/Clock.text == String(30) and not endgame:
 		endgame = true
 		_dialogue(end_text)
+	if population == 0 and not ahhhh:
+		ahhhh = true
+		_on_InternalClock_timeout()
 
 func _on_InternalClock_timeout():
 	if population == 40:
 		get_tree().change_scene("res://WonGame.tscn")
 	else:
+		player.stop()
 		siren.play()
-		for i in range(180):
+		for i in range(210):
 				yield(get_tree(), "idle_frame")
 		siren.stop()
 		get_tree().change_scene("res://Court.tscn")
