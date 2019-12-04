@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TitleScreenBop.wav-562f1f4ab483ade121ade5b7df7e5f25.sample"
+
+[deps]
+
+source_file="res://Music/TitleScreenBop.wav"
+dest_files=[ "res://.import/TitleScreenBop.wav-562f1f4ab483ade121ade5b7df7e5f25.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
