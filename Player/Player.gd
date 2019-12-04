@@ -8,7 +8,7 @@ var currentNPC
 var motion
 var parent
 var guts_resource = preload("res://misc/guts.tscn")
-
+var stab = false
 func _ready():
 	parent = get_parent()
 
@@ -25,6 +25,7 @@ func _physics_process(delta):
 			deadNPC.queue_free()
 			parent.population -= 1
 			parent.honor_points -= 10
+		stab = true
 		match lastmotion:
 			"d":
 				$Sprite.play("stabd")
@@ -35,6 +36,9 @@ func _physics_process(delta):
 				$Sprite.flip_h
 			"u":
 				$Sprite.play("stabu")
+		for i in range(10):
+				yield(get_tree(), "idle_frame")
+		stab = false
 		
 
 func controls_loop():
@@ -47,36 +51,48 @@ func controls_loop():
 	movedir.y = -int(UP) + int(DOWN)
 
 func movement_loop():
-	motion = movedir.normalized() * SPEED
-	
-	move_and_slide(motion, Vector2(0,0))
-	if motion.x < 0:
-		$Sprite.play("walks")
-		$Sprite.flip_h = false
-		lastmotion = "l"
-	elif motion.x > 0:
-		$Sprite.play("walks")
-		$Sprite.flip_h = true
-		lastmotion = "r"
-	elif motion.y > 0:
-		$Sprite.play("walkd")
-		$Sprite.flip_h = false
-		lastmotion = "d"
-	elif motion.y < 0:
-		$Sprite.play("walku")
-		$Sprite.flip_h = false
-		lastmotion = "u"
-	else:
-		if lastmotion == "d":
-			$Sprite.play("idled")
-		elif lastmotion == "u":
-			$Sprite.play("idleu")
-		elif lastmotion == "l":
-			$Sprite.play("idles")
+	if self.get_tree().paused == false:
+		
+		motion = movedir.normalized() * SPEED
+		
+		move_and_slide(motion, Vector2(0,0))
+		if motion.x < 0:
+			if not stab:
+				$Sprite.play("walks")
 			$Sprite.flip_h = false
-		elif lastmotion == "r":
-			$Sprite.play("idles")
+			lastmotion = "l"
+		elif motion.x > 0:
+			if not stab:
+				$Sprite.play("walks")
 			$Sprite.flip_h = true
+			lastmotion = "r"
+		elif motion.y > 0:
+			if not stab:
+				$Sprite.play("walkd")
+			$Sprite.flip_h = false
+			lastmotion = "d"
+		elif motion.y < 0:
+			if not stab:
+				$Sprite.play("walku")
+			$Sprite.flip_h = false
+			lastmotion = "u"
+		else:
+			if lastmotion == "d" and not stab:
+				$Sprite.flip_h = false
+				$Sprite.play("idled")
+				
+			elif lastmotion == "u" and not stab:
+				$Sprite.flip_h = false
+				$Sprite.play("idleu")
+				
+			elif lastmotion == "l" and not stab:
+				$Sprite.flip_h = false
+				$Sprite.play("idles")
+				
+			elif lastmotion == "r" and not stab:
+				$Sprite.flip_h = true
+				$Sprite.play("idles")
+				
 
 func _on_NPCdetection_body_entered(body):
 	if body.is_in_group("NPC"):

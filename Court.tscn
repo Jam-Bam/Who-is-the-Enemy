@@ -18,37 +18,22 @@ animations = [ {
 size = 8
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
 font_data = ExtResource( 5 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 120.334, 68.041 )
+position = Vector2( 119.907, 67.1866 )
 frames = SubResource( 1 )
 animation = "0"
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 1.17995
-margin_top = 94.0
-margin_right = 239.18
-margin_bottom = 134.0
+margin_left = 2.0
+margin_top = 91.0
+margin_right = 238.0
+margin_bottom = 133.0
 custom_fonts/normal_font = SubResource( 2 )
-
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="Timer3" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="Timer4" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="Timer5" type="Timer" parent="."]
-wait_time = 3.0
-[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
-[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
-[connection signal="timeout" from="Timer4" to="." method="_on_Timer4_timeout"]
-[connection signal="timeout" from="Timer5" to="." method="_on_Timer5_timeout"]

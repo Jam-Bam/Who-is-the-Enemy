@@ -12,7 +12,6 @@ font_data = ExtResource( 4 )
 font_data = ExtResource( 4 )
 
 [node name="TitleScreen" type="Control"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -37,16 +36,20 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -68.0
-margin_top = -46.0
+margin_left = -83.7896
+margin_top = -53.8329
+margin_right = -5.78955
+margin_bottom = -7.8329
 custom_fonts/font = SubResource( 1 )
 text = "QUIT"
 
 [node name="PlayBtn" type="Button" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -78.0
-margin_bottom = 46.0
+margin_left = -83.0
+margin_top = 17.3686
+margin_right = -5.0
+margin_bottom = 63.3686
 custom_fonts/font = SubResource( 2 )
 text = "PLAY"
 [connection signal="pressed" from="QuitBtn" to="." method="_on_QuitBtn_pressed"]

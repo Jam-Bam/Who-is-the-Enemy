@@ -1,8 +1,20 @@
 extends Node
-var beginning_text = "......... Schiz! It's me! Listen!!! They're out to get you!! You must kill them before they kill you! TRUST ME! Watch out, They have a white shirt on! By the way, you can move with WASD or the Arrow Keys and STAB with the SPACEBAR. Goodluck!"
-var text_array = ["Whoops, I was wrong, they're wearing a blue shirt!","Oh no! I forgot to mention they have green hair","Oh wait! Find the man with the glasses now!"]
+var beginning_text = "Hey Schiz, it's me! Listen! There's someone out to get you! Your only chance is to get rid of them before they kill you! TRUST ME! My sources say they have a white shirt on. By the way, you can move with WASD or the ARROWS and stab your target with the SPACEBAR. Good luck!"
+var text_array = ["Whoops, I was wrong, they're wearing a blue shirt!", 
+"Oh no! I forgot to mention they have green hair.", 
+"Oh wait! Find the man with the glasses now!", 
+"They might be wearing a tie!", 
+"I bet they don't have any hair.", 
+"I don't really like their fashion sense.", 
+"Keep on eye on that one.", 
+"The strong ones could easily strangle you.", 
+"Their head is a bit oddly shaped.", 
+"I think it's a woman!", 
+"What do you say we grab a drink once's everything's cleared up?", 
+"Make sure your knife doesn't get too dull."]
 var end_text = "SCHIZ!!! I can't help you anymore! Trust no one but yourself!"
 var NPC_Resource = load("res://NPCs/NPC.tscn")
+var used_texts = [-1, -2]
 onready var player = $MusicPlayer
 onready var siren = $Siren
 onready var timer = $Timer
@@ -14,11 +26,15 @@ onready var bottom_left = $Points/BottomLeft
 onready var bottom_right = $Points/BottomRight
 var population = 40
 var honor_points = 0
-var talking = false
+var endgame = false
+var x = true
+var newd = null
+var used = false
+
 
 func _ready():
 	$Player.get_tree().paused = true
-	timer.set_wait_time(.05)
+	timer.set_wait_time(.03)
 	_dialogue(beginning_text)
 	player.play()
 	randomize()
@@ -40,47 +56,57 @@ func _ready():
 		NPC.position = bottom_right.position
 
 func _dialogue(string):
+	
 	player.volume_db = -10
 	$RadioGuy.play()
 	for letter in string:
 		timer.start()
 		$UI/RadioText.add_text(letter)
 		yield(timer, "timeout")
-		if $UI/RadioText.text == beginning_text or $UI/RadioText.text == text_array[0] or $UI/RadioText.text == text_array[1] or $UI/RadioText.text == text_array[2]:
-			$Text_End.start()
+		#if $UI/RadioText.text == beginning_text:
+			
+		if $UI/RadioText.text == string:
 			$RadioGuy.stop()
+			for i in range(180):
+				yield(get_tree(), "idle_frame")
+			$UI/RadioText.text = ""
 			player.volume_db = 0
+			$Player.get_tree().paused = false
+			for i in range(1800):
+				yield(get_tree(), "idle_frame")
+			newdialog()
+			
+
+
+func newdialog():
+	if not endgame:
+		while x == true:
+			newd = randi() % 11
+			if used_texts.count(newd) == 0:
+				print("Unique phrase!")
+				used_texts.append(newd)
+				print(used_texts)
+				break
+				
+			else:
+				print("Has been said...")
+				
+		_dialogue(text_array[newd])
 
 func _process(delta):
 	pop_label.text = "Population: " + String(population)
 	hon_label.text = "Points: " + String(honor_points)
-	if population == 0:
-		if siren.playing != true:
-			siren.play()
-			player.stop()
-			timer.start()
-	if ($UI/Clock.text == String(240) or $UI/Clock.text == String(180)) or $UI/Clock.text == String(120) and talking == true:
-		if talking:
-			print("pie")
-			talking = false
-			_dialogue(text_array[int(rand_range(0,2))])
-	if ($UI/Clock.text == String(60)) and talking:
-		if talking:
-			talking = false
-			_dialogue(end_text)
-
-
-func _on_Timer_timeout():
-	get_tree().change_scene("res://Court.tscn")
-	
-func _on_Text_End_timeout():
-	$UI/RadioText.text = ""
-	$Player.get_tree().paused = false
-	talking = true
-
+	$UI/Clock.text = String(int($InternalClock.time_left))
+	if $UI/Clock.text == String(30) and not endgame:
+		endgame = true
+		_dialogue(end_text)
 
 func _on_InternalClock_timeout():
 	if population == 40:
 		get_tree().change_scene("res://WonGame.tscn")
 	else:
-		pass
+		siren.play()
+		for i in range(180):
+				yield(get_tree(), "idle_frame")
+		siren.stop()
+		get_tree().change_scene("res://Court.tscn")

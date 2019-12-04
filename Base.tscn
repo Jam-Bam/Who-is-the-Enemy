@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Base.gd" type="Script" id=1]
 [ext_resource path="res://Music/[SLOW] DarkMusic.wav" type="AudioStream" id=2]
@@ -19,7 +19,21 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 12 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 4
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
+font_data = ExtResource( 12 )
+
 [node name="Level" type="Node"]
+pause_mode = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
@@ -31,6 +45,7 @@ one_shot = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+autoplay = true
 
 [node name="RadioGuy" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -131,12 +146,19 @@ region_rect = Rect2( 0, 100, 64, 30 )
 position = Vector2( 546.13, -73.6317 )
 
 [node name="UI" type="CanvasLayer" parent="."]
-editor/display_folded = true
+
+[node name="Clock" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -15.0
+margin_right = 25.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
 
 [node name="popLabel" type="Label" parent="UI"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Population"
 
 [node name="honLabel" type="Label" parent="UI"]
@@ -144,12 +166,16 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -80.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Points:"
 
 [node name="RadioText" type="RichTextLabel" parent="UI"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 2.0
+margin_top = 70.0
+margin_right = 238.0
+margin_bottom = 133.0
+custom_fonts/normal_font = SubResource( 3 )
+scroll_active = false
 
 [node name="Points" type="Node2D" parent="."]
 editor/display_folded = true
@@ -168,10 +194,8 @@ position = Vector2( 517.039, 392.912 )
 
 [node name="Text_Timer" type="Timer" parent="."]
 
-[node name="Text_End" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="InternalClock" type="Timer" parent="."]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Text_End" to="." method="_on_Text_End_timeout"]
+wait_time = 300.0
+one_shot = true
+autostart = true
 [connection signal="timeout" from="InternalClock" to="." method="_on_InternalClock_timeout"]
