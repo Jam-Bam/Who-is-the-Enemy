@@ -18,9 +18,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
-"name": "stabu",
+"name": "stabs",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walks",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -33,6 +38,11 @@ animations = [ {
 "name": "walkd",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "stabd",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "idles",
@@ -43,24 +53,14 @@ animations = [ {
 "name": "walku",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "stabd",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "idled",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "walks",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "stabs",
+"name": "stabu",
 "speed": 5.0
 } ]
 
@@ -89,8 +89,6 @@ shape = SubResource( 2 )
 position = Vector2( 8, 8 )
 z_index = 1
 current = true
-drag_margin_h_enabled = false
-drag_margin_v_enabled = false
 
 [node name="NPCdetection" type="Area2D" parent="."]
 

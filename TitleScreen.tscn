@@ -2,7 +2,7 @@
 
 [ext_resource path="res://TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Music/TitleScreenBop.wav" type="AudioStream" id=2]
-[ext_resource path="res://misc/Icon.png" type="Texture" id=3]
+[ext_resource path="res://misc/WITELogo.png" type="Texture" id=3]
 [ext_resource path="res://misc/Fipps-Regular.otf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
@@ -25,11 +25,15 @@ autoplay = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 67.7958, 68.1672 )
-scale = Vector2( 4.21673, 4.21673 )
+position = Vector2( 0, 5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
+centered = false
 
 [node name="QuitBtn" type="Button" parent="."]
 anchor_left = 1.0
@@ -52,5 +56,8 @@ margin_right = -5.0
 margin_bottom = 63.3686
 custom_fonts/font = SubResource( 2 )
 text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="QuitBtn" to="." method="_on_QuitBtn_pressed"]
 [connection signal="pressed" from="PlayBtn" to="." method="_on_PlayBtn_pressed"]
