@@ -23,6 +23,11 @@ animations = [ {
 "name": "stabs",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "idled",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "walks",
@@ -31,11 +36,6 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "idleu",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "walkd",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -48,19 +48,19 @@ animations = [ {
 "name": "idles",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "walku",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "idled",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "stabu",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walkd",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "walku",
 "speed": 5.0
 } ]
 
