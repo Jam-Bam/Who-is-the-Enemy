@@ -155,8 +155,9 @@ margin_bottom = 20.0
 custom_fonts/font = SubResource( 1 )
 
 [node name="popLabel" type="Label" parent="UI"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 0.793701
+margin_right = 70.7937
+margin_bottom = 20.0
 custom_fonts/font = SubResource( 2 )
 text = "Population"
 
@@ -173,7 +174,9 @@ margin_left = 2.0
 margin_top = 70.0
 margin_right = 238.0
 margin_bottom = 133.0
+rect_clip_content = false
 custom_fonts/normal_font = SubResource( 3 )
+text = "assssssssssssssssssss"
 scroll_active = false
 
 [node name="Points" type="Node2D" parent="."]
@@ -196,4 +199,5 @@ position = Vector2( 517.039, 392.912 )
 wait_time = 300.0
 one_shot = true
 autostart = true
+
 [connection signal="timeout" from="InternalClock" to="." method="_on_InternalClock_timeout"]
